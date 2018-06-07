@@ -12,8 +12,12 @@ $('#newCard').on('click', function() {
   $('#showCard').text(current_card.question)
 })
 
-$('#flipCard').on('click', function() {
-  if $('#showCard')
+$('#flipCard').click(function() {
+  if ($('#showCard').text() == current_card.question) {
+    $('#showCard').text(current_card.answer)
+  } else {
+    $('#showCard').text(current_card.question)
+  }
 })
 
 
@@ -23,7 +27,7 @@ function add_flashcard() {
   flashcards.push( { q, a } )
   alert(`Added at index ${card + 1}`);
   card++;
-  debugger
+
 
 }
 
